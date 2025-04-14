@@ -133,14 +133,15 @@ export default function ExamScreen() {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-2">{exam.title}</h1>
-        <div className="flex flex-col gap-4">
-          <div className="flex justify-between items-center">
-            <ProgressBar progress={progress} />
-            <span className="text-lg font-semibold">{formatTime(timeLeft)}</span>
+      <div className="flex justify-between gap-8">
+        <div className="w-2/3">
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold mb-2">{exam.title}</h1>
+            <div className="flex justify-between items-center">
+              <ProgressBar progress={progress} />
+              <span className="text-lg font-semibold">{formatTime(timeLeft)}</span>
+            </div>
           </div>
-          <div className="flex gap-2 flex-wrap">
             {exam.questions.map((_, index) => (
               <button
                 key={index}
@@ -156,11 +157,7 @@ export default function ExamScreen() {
                 {index + 1}
               </button>
             ))}
-          </div>
-        </div>
-      </div>
-
-      <Card>
+          <Card>
         <CardContent className="p-6">
           <h2 className="text-xl mb-4">Question {currentQuestionIndex + 1}</h2>
           <p className="text-lg mb-6">{currentQuestion.text}</p>
@@ -218,6 +215,32 @@ export default function ExamScreen() {
           </div>
         </CardContent>
       </Card>
+        </div>
+        <div className="w-1/3">
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-lg font-semibold mb-4">Questions</h2>
+              <div className="grid grid-cols-4 gap-2">
+                {exam.questions.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentQuestionIndex(index)}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center border 
+                      ${currentQuestionIndex === index 
+                        ? 'bg-primary text-white border-primary' 
+                        : selectedAnswers[exam.questions[index].id] 
+                          ? 'bg-green-100 border-green-500 text-green-700' 
+                          : 'bg-white border-gray-300 hover:border-gray-400'
+                      }`}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 }
