@@ -9,7 +9,10 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5000,
     strictPort: true,
-    allowedHosts: ['.replit.dev', '.worf.replit.dev']
+    allowedHosts: ['.replit.dev', '.worf.replit.dev'],
+    watch: {
+      usePolling: true
+    }
   },
   plugins: [
     react(),
