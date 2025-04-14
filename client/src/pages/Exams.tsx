@@ -669,9 +669,6 @@ const Exams = () => {
                       {exam.questions.length} questions
                     </div>
                   </div>
-                  <div className="w-full text-center bg-blue-600 text-white py-2">
-                    Start Exam
-                  </div>
                 </div>
               </div>
             ))
