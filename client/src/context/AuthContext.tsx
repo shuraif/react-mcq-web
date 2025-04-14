@@ -7,8 +7,8 @@ const mockUser: User = {
   username: "testuser",
   name: "Test User",
   email: "test@example.com",
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString()
+  password: "password123", // Not actually used, just for the type
+  createdAt: new Date()
 };
 
 interface AuthContextType {
@@ -53,11 +53,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     checkAuth();
   }, [checkAuth]);
 
-  const login = async (username: string, password: string) => {
+  const login = async (username: string, password: string): Promise<void> => {
     // Simulate successful login
     setUser(mockUser);
     setIsAuthenticated(true);
-    return { user: mockUser };
   };
 
   const register = async (userData: {
@@ -65,11 +64,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     password: string;
     name: string;
     email: string;
-  }) => {
+  }): Promise<void> => {
     // Simulate successful registration
     setUser(mockUser);
     setIsAuthenticated(true);
-    return { user: mockUser };
   };
 
   const logout = async () => {

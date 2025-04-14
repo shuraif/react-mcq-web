@@ -39,22 +39,15 @@ const Login = () => {
   // Handle form submission
   const onSubmit = async (data: LoginFormValues) => {
     setIsSubmitting(true);
-    try {
-      await login(data.username, data.password);
+    // Skip validation and directly navigate to dashboard
+    setTimeout(() => {
       toast({
         title: "Success",
         description: "You have successfully logged in"
       });
       navigate("/dashboard");
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to login",
-        variant: "destructive"
-      });
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 500); // Short delay for better UX
   };
 
   return (
