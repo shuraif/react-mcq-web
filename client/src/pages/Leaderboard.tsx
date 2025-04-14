@@ -31,62 +31,30 @@ const mockLeaderboardData = [
     user: { id: 5, name: "Charlie Ross", email: "charlie@example.com" },
     score: 780,
     examsCompleted: 7
-  },
-  {
-    user: { id: 6, name: "Diana Chen", email: "diana@example.com" },
-    score: 750,
-    examsCompleted: 6
-  },
-  {
-    user: { id: 7, name: "Evan White", email: "evan@example.com" },
-    score: 720,
-    examsCompleted: 5
-  },
-  {
-    user: { id: 8, name: "Fiona Black", email: "fiona@example.com" },
-    score: 690,
-    examsCompleted: 5
-  },
-  {
-    user: { id: 9, name: "Greg Peterson", email: "greg@example.com" },
-    score: 650,
-    examsCompleted: 4
-  },
-  {
-    user: { id: 10, name: "Hannah Lee", email: "hannah@example.com" },
-    score: 620,
-    examsCompleted: 4
   }
 ];
 
 const Leaderboard = () => {
   const { user } = useAuth();
   const [filters, setFilters] = useState({
-    language: "",
+    language: "all",
     timePeriod: "monthly",
-    expertise: ""
+    expertise: "all"
   });
-  
-  // Use mock data for development
-  const leaderboard = mockLeaderboardData;
-  const isLoading = false;
-  
+
   const handleFilterChange = (key: string, value: string) => {
     setFilters({
       ...filters,
       [key]: value
     });
   };
-  
+
   // Get top 3 leaders
-  const topLeaders = leaderboard?.slice(0, 3) || [];
-  
+  const topLeaders = mockLeaderboardData.slice(0, 3);
+
   // Get rest of leaderboard starting from position 4
-  const restOfLeaderboard = leaderboard?.slice(3) || [];
-  
-  // Find current user's position
-  const userPosition = leaderboard?.findIndex(item => item.user.id === user?.id);
-  
+  const restOfLeaderboard = mockLeaderboardData.slice(3);
+
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">
@@ -94,7 +62,7 @@ const Leaderboard = () => {
           <h2 className="text-2xl font-medium text-gray-800 mb-2">Leaderboard</h2>
           <p className="text-gray-600">See how you rank against other developers and programmers</p>
         </div>
-        
+
         {/* Filters */}
         <Card className="mb-8">
           <CardContent className="p-6">
@@ -106,7 +74,7 @@ const Leaderboard = () => {
                     <SelectValue placeholder="All Languages" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Languages</SelectItem>
+                    <SelectItem value="all">All Languages</SelectItem>
                     <SelectItem value="javascript">JavaScript</SelectItem>
                     <SelectItem value="python">Python</SelectItem>
                     <SelectItem value="java">Java</SelectItem>
@@ -135,7 +103,7 @@ const Leaderboard = () => {
                     <SelectValue placeholder="All Levels" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Levels</SelectItem>
+                    <SelectItem value="all">All Levels</SelectItem>
                     <SelectItem value="beginner">Beginner</SelectItem>
                     <SelectItem value="intermediate">Intermediate</SelectItem>
                     <SelectItem value="advanced">Advanced</SelectItem>
@@ -145,24 +113,18 @@ const Leaderboard = () => {
             </div>
           </CardContent>
         </Card>
-        
-        {isLoading ? (
-          <div className="text-center p-8">Loading leaderboard...</div>
-        ) : (
-          <>
-            {/* Top 3 Leaders */}
-            <TopLeaders leaders={topLeaders} />
-            
-            {/* Leaderboard Table */}
-            <Card className="overflow-hidden">
-              <LeaderboardTable 
-                leaderboardData={restOfLeaderboard} 
-                currentUserId={user?.id} 
-                startRank={4} // Top 3 are displayed separately
-              />
-            </Card>
-          </>
-        )}
+
+        {/* Top 3 Leaders */}
+        <TopLeaders leaders={topLeaders} />
+
+        {/* Leaderboard Table */}
+        <Card className="overflow-hidden">
+          <LeaderboardTable 
+            leaderboardData={restOfLeaderboard}
+            currentUserId={user?.id}
+            startRank={4}
+          />
+        </Card>
       </div>
     </div>
   );
