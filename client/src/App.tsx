@@ -25,25 +25,14 @@ function App() {
   }, [checkAuth]);
 
   useEffect(() => {
-    if (!isLoading) {
-      // Redirect to login if not authenticated and not already on auth pages
-      if (!isAuthenticated && 
-          !location.startsWith("/login") && 
-          !location.startsWith("/register") && 
-          !location.startsWith("/forgot-password")) {
-        navigate("/login");
-      }
-      
-      // Redirect to dashboard if authenticated and on auth pages
-      if (isAuthenticated && 
-          (location.startsWith("/login") || 
-           location.startsWith("/register") || 
-           location.startsWith("/forgot-password") ||
-           location === "/")) {
-        navigate("/dashboard");
-      }
+    // Always redirect to login if at root
+    if (location === "/") {
+      navigate("/login");
     }
-  }, [isAuthenticated, isLoading, location, navigate]);
+    
+    // We're no longer checking authentication status here
+    // The individual login/register forms will redirect to dashboard on submit
+  }, [location, navigate]);
 
   if (isLoading) {
     return (

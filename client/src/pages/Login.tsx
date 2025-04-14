@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/context/AuthContext";
 
 // Form validation schema
 const loginSchema = z.object({
@@ -21,7 +20,6 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 const Login = () => {
-  const { login } = useAuth();
   const { toast } = useToast();
   const [, navigate] = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,10 +34,9 @@ const Login = () => {
     }
   });
   
-  // Handle form submission
+  // Handle form submission - simply redirect to dashboard
   const onSubmit = async (data: LoginFormValues) => {
     setIsSubmitting(true);
-    // Skip validation and directly navigate to dashboard
     setTimeout(() => {
       toast({
         title: "Success",
