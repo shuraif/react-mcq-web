@@ -1,17 +1,11 @@
-import { createRoot } from "react-dom/client";
+
+import React from "react";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { AuthProvider } from "./context/AuthContext";
-import { ExamProvider } from "./context/ExamContext";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./lib/queryClient";
 
-createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <ExamProvider>
-        <App />
-      </ExamProvider>
-    </AuthProvider>
-  </QueryClientProvider>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
