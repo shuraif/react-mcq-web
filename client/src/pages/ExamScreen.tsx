@@ -142,21 +142,7 @@ export default function ExamScreen() {
               <span className="text-lg font-semibold">{formatTime(timeLeft)}</span>
             </div>
           </div>
-            {exam.questions.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentQuestionIndex(index)}
-                className={`w-8 h-8 rounded-full flex items-center justify-center border 
-                  ${currentQuestionIndex === index 
-                    ? 'bg-primary text-white border-primary' 
-                    : selectedAnswers[exam.questions[index].id] 
-                      ? 'bg-green-100 border-green-500 text-green-700' 
-                      : 'bg-white border-gray-300 hover:border-gray-400'
-                  }`}
-              >
-                {index + 1}
-              </button>
-            ))}
+            
           <Card>
         <CardContent className="p-6">
           <h2 className="text-xl mb-4">Question {currentQuestionIndex + 1}</h2>
