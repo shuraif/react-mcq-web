@@ -80,19 +80,33 @@ const Dashboard = () => {
     return !attempted;
   }).slice(0, 2) || [];
   
-  // Format recent activity for the table
-  const recentActivity = completedExams
-    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-    .slice(0, 4)
-    .map(attempt => {
-      const exam = exams?.find(e => e.id === attempt.examId);
-      return {
-        examTitle: exam?.title || "Unknown Exam",
-        date: new Date(attempt.createdAt).toLocaleDateString(),
-        score: attempt.score,
-        time: Math.floor(attempt.timeTaken / 60) + ":" + (attempt.timeTaken % 60).toString().padStart(2, '0')
-      };
-    });
+  // Dummy recent activity data
+  const recentActivity = [
+    {
+      examTitle: "JavaScript Fundamentals",
+      date: new Date(Date.now() - 1000 * 60 * 60 * 2).toLocaleDateString(), // 2 hours ago
+      score: 85,
+      time: "12:30"
+    },
+    {
+      examTitle: "React Basics",
+      date: new Date(Date.now() - 1000 * 60 * 60 * 24).toLocaleDateString(), // 1 day ago
+      score: 92,
+      time: "18:45"
+    },
+    {
+      examTitle: "Python Basics",
+      date: new Date(Date.now() - 1000 * 60 * 60 * 48).toLocaleDateString(), // 2 days ago
+      score: 78,
+      time: "15:20"
+    },
+    {
+      examTitle: "SQL Basics",
+      date: new Date(Date.now() - 1000 * 60 * 60 * 72).toLocaleDateString(), // 3 days ago
+      score: 95,
+      time: "10:15"
+    }
+  ];
   
   return (
     <div className="py-8">
