@@ -44,7 +44,11 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {isAuthenticated && <Header />}
+      {/* Always show Header except on login/register/forgot-password pages */}
+      {!location.startsWith("/login") && 
+       !location.startsWith("/register") && 
+       !location.startsWith("/forgot-password") && <Header />}
+      
       <main className="flex-grow bg-gray-100">
         <Switch>
           <Route path="/login" component={Login} />
@@ -58,7 +62,12 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      {isAuthenticated && <Footer />}
+      
+      {/* Always show Footer except on login/register/forgot-password pages */}
+      {!location.startsWith("/login") && 
+       !location.startsWith("/register") && 
+       !location.startsWith("/forgot-password") && <Footer />}
+      
       <Toaster />
     </div>
   );
