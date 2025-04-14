@@ -39,67 +39,34 @@ const dummyExams = [
       },
       {
         id: "q3",
-        text: "What is the purpose of 'use strict' in JavaScript?",
+        text: "What is the purpose of the setTimeout function?",
         options: [
-          { id: "a", text: "To enable strict type checking" },
-          { id: "b", text: "To prevent common coding mistakes" },
-          { id: "c", text: "To improve performance" },
-          { id: "d", text: "To enable new JavaScript features" }
+          { id: "a", text: "To pause the execution of code" },
+          { id: "b", text: "To execute a function after a specified delay" },
+          { id: "c", text: "To set a timer for the page to reload" },
+          { id: "d", text: "To measure code execution time" }
         ],
         correctOptionId: "b"
       },
       {
         id: "q4",
-        text: "Which method removes the last element from an array?",
+        text: "Which method is used to add an element at the end of an array?",
         options: [
-          { id: "a", text: "shift()" },
-          { id: "b", text: "unshift()" },
-          { id: "c", text: "pop()" },
-          { id: "d", text: "push()" }
+          { id: "a", text: "append()" },
+          { id: "b", text: "push()" },
+          { id: "c", text: "add()" },
+          { id: "d", text: "insert()" }
         ],
-        correctOptionId: "c"
+        correctOptionId: "b"
       },
       {
         id: "q5",
-        text: "What is the output of: console.log(2 + '2');",
+        text: "What is the result of '2' + 2 in JavaScript?",
         options: [
           { id: "a", text: "4" },
-          { id: "b", text: "22" },
-          { id: "c", text: "NaN" },
-          { id: "d", text: "Error" }
-        ],
-        correctOptionId: "b"
-      },
-      {
-        id: "q6",
-        text: "Explain the difference between == and === in JavaScript.",
-        options: [
-          { id: "a", text: "They are the same." },
-          { id: "b", text: "== checks for value equality, === checks for both value and type equality." },
-          { id: "c", text: "== checks for type equality, === checks for value equality." },
-          { id: "d", text: "=== is faster than ==" }
-        ],
-        correctOptionId: "b"
-      },
-      {
-        id: "q7",
-        text: "What is a closure in JavaScript?",
-        options: [
-          { id: "a", text: "A type of loop" },
-          { id: "b", text: "A function that has access to variables from its surrounding scope, even after that scope has finished executing." },
-          { id: "c", text: "A way to define private variables" },
-          { id: "d", text: "A method for handling errors" }
-        ],
-        correctOptionId: "b"
-      },
-      {
-        id: "q8",
-        text: "What does the 'this' keyword refer to in JavaScript?",
-        options: [
-          { id: "a", text: "Always refers to the global object" },
-          { id: "b", text: "Depends on how the function is called (context)" },
-          { id: "c", text: "Refers to the current function" },
-          { id: "d", text: "Refers to the calling function" }
+          { id: "b", text: "'22'" },
+          { id: "c", text: "Error" },
+          { id: "d", text: "NaN" }
         ],
         correctOptionId: "b"
       }
