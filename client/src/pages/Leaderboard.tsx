@@ -107,10 +107,11 @@ const Leaderboard = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="">All Languages</SelectItem>
-                    <SelectItem value="spanish">Spanish</SelectItem>
-                    <SelectItem value="french">French</SelectItem>
-                    <SelectItem value="german">German</SelectItem>
-                    <SelectItem value="italian">Italian</SelectItem>
+                    <SelectItem value="javascript">JavaScript</SelectItem>
+                    <SelectItem value="python">Python</SelectItem>
+                    <SelectItem value="java">Java</SelectItem>
+                    <SelectItem value="csharp">C#</SelectItem>
+                    <SelectItem value="sql">SQL</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -128,17 +129,16 @@ const Leaderboard = () => {
                 </Select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Region</label>
-                <Select value={filters.region} onValueChange={(value) => handleFilterChange("region", value)}>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Expertise Level</label>
+                <Select value={filters.expertise} onValueChange={(value) => handleFilterChange("expertise", value)}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Global" />
+                    <SelectValue placeholder="All Levels" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Global</SelectItem>
-                    <SelectItem value="north-america">North America</SelectItem>
-                    <SelectItem value="europe">Europe</SelectItem>
-                    <SelectItem value="asia">Asia</SelectItem>
-                    <SelectItem value="other">Other Regions</SelectItem>
+                    <SelectItem value="">All Levels</SelectItem>
+                    <SelectItem value="beginner">Beginner</SelectItem>
+                    <SelectItem value="intermediate">Intermediate</SelectItem>
+                    <SelectItem value="advanced">Advanced</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

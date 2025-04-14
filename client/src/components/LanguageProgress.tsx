@@ -30,15 +30,15 @@ const LanguageProgress = ({ data }: LanguageProgressProps) => {
       </div>
       <div className="text-sm text-gray-600">
         <div className="flex justify-between mb-2">
-          <span>Vocabulary</span>
+          <span>Core Concepts</span>
           <span className="font-medium">{data.vocabulary}%</span>
         </div>
         <div className="flex justify-between mb-2">
-          <span>Grammar</span>
+          <span>Syntax</span>
           <span className="font-medium">{data.grammar}%</span>
         </div>
         <div className="flex justify-between">
-          <span>Comprehension</span>
+          <span>Problem Solving</span>
           <span className="font-medium">{data.comprehension}%</span>
         </div>
       </div>

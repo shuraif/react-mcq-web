@@ -98,8 +98,8 @@ const Dashboard = () => {
     <div className="py-8">
       <div className="container mx-auto px-4">
         <div className="mb-8">
-          <h2 className="text-2xl font-medium text-gray-800 mb-2">Welcome back, {user?.name || 'Student'}!</h2>
-          <p className="text-gray-600">Continue your language learning journey</p>
+          <h2 className="text-2xl font-medium text-gray-800 mb-2">Welcome back, {user?.name || 'Developer'}!</h2>
+          <p className="text-gray-600">Continue your programming knowledge journey</p>
         </div>
         
         {/* Progress Summary */}
@@ -121,7 +121,7 @@ const Dashboard = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-medium text-primary mb-1">{languages.length}</div>
-                  <div className="text-gray-600 text-sm">Languages</div>
+                  <div className="text-gray-600 text-sm">Languages/Frameworks</div>
                 </div>
               </div>
             </CardContent>
@@ -191,7 +191,7 @@ const Dashboard = () => {
         <Card>
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-medium text-gray-800">Language Progress</h3>
+              <h3 className="text-lg font-medium text-gray-800">Programming Progress</h3>
               <div className="flex">
                 <button className="px-3 py-1 rounded text-sm font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 mr-2">Week</button>
                 <button className="px-3 py-1 rounded text-sm font-medium bg-primary text-white hover:bg-primary-dark">Month</button>
@@ -203,8 +203,8 @@ const Dashboard = () => {
               ))}
               {languageProgressData.length === 0 && (
                 <div className="col-span-3 text-center p-10 border border-gray-200 rounded-lg">
-                  <h4 className="text-lg font-medium text-gray-600 mb-2">No language progress yet</h4>
-                  <p className="text-gray-500">Complete exams to see your language progress tracking</p>
+                  <h4 className="text-lg font-medium text-gray-600 mb-2">No programming progress yet</h4>
+                  <p className="text-gray-500">Complete coding exams to track your programming skills</p>
                 </div>
               )}
             </div>
