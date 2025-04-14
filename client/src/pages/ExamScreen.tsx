@@ -5,8 +5,74 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import ProgressBar from "@/components/ProgressBar";
 
-// Import exam data from Exams.tsx
-import { dummyExams } from "./Exams";
+const dummyExams = [
+  {
+    id: 1,
+    title: "JavaScript Fundamentals",
+    language: "JavaScript",
+    level: "Beginner",
+    description: "Test your knowledge of JavaScript basics including variables, functions, and control flow.",
+    timeLimit: 15,
+    imageUrl: "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
+    questions: [
+      {
+        id: "q1",
+        text: "Which of the following is a correct way to declare a variable in JavaScript?",
+        options: [
+          { id: "a", text: "variable x = 5;" },
+          { id: "b", text: "let x = 5;" },
+          { id: "c", text: "int x = 5;" },
+          { id: "d", text: "x := 5;" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q2",
+        text: "What will be the output of: console.log(typeof []);",
+        options: [
+          { id: "a", text: "array" },
+          { id: "b", text: "object" },
+          { id: "c", text: "undefined" },
+          { id: "d", text: "null" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q3",
+        text: "What is the purpose of the setTimeout function?",
+        options: [
+          { id: "a", text: "To pause the execution of code" },
+          { id: "b", text: "To execute a function after a specified delay" },
+          { id: "c", text: "To set a timer for the page to reload" },
+          { id: "d", text: "To measure code execution time" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "Which method is used to add an element at the end of an array?",
+        options: [
+          { id: "a", text: "append()" },
+          { id: "b", text: "push()" },
+          { id: "c", text: "add()" },
+          { id: "d", text: "insert()" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q5",
+        text: "What is the result of '2' + 2 in JavaScript?",
+        options: [
+          { id: "a", text: "4" },
+          { id: "b", text: "'22'" },
+          { id: "c", text: "Error" },
+          { id: "d", text: "NaN" }
+        ],
+        correctOptionId: "b"
+      }
+    ]
+  }
+];
 
 export default function ExamScreen() {
   const [match, params] = useRoute("/exam/:id");
