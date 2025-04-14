@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useRoute } from "wouter";
+import { useRoute, useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -38,6 +38,7 @@ const dummyExams = [
 
 export default function ExamScreen() {
   const [match, params] = useRoute("/exam/:id");
+  const [, setLocation] = useLocation();
   const examId = match ? parseInt(params.id) : null;
   const exam = dummyExams.find(e => e.id === examId);
 
