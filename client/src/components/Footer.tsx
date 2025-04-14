@@ -1,3 +1,5 @@
+import { GraduationCap, Facebook, Heart, Globe, Mail } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8">
@@ -5,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-6 md:mb-0">
             <div className="flex items-center mb-4">
-              <span className="material-icons mr-2">school</span>
+              <GraduationCap className="mr-2" />
               <h2 className="text-xl font-medium">LinguaExam</h2>
             </div>
             <p className="text-gray-400 max-w-md">
@@ -53,16 +55,16 @@ const Footer = () => {
           </div>
           <div className="flex space-x-4">
             <a href="#" className="text-gray-400 hover:text-white">
-              <span className="material-icons">facebook</span>
+              <Facebook className="w-5 h-5" />
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
-              <span className="material-icons">favorite</span>
+              <Heart className="w-5 h-5" />
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
-              <span className="material-icons">language</span>
+              <Globe className="w-5 h-5" />
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
-              <span className="material-icons">email</span>
+              <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>
