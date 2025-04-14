@@ -51,7 +51,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row md:justify-between md:items-center">
           <div className="text-gray-400 mb-4 md:mb-0">
-            &copy; 2023 LinguaExam. All rights reserved.
+            &copy; 2025 CodeQuiz. All rights reserved.
           </div>
           <div className="flex space-x-4">
             <a href="#" className="text-gray-400 hover:text-white">
