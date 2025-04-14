@@ -147,12 +147,24 @@ export default function ExamScreen() {
             >
               Previous
             </Button>
-            <Button
-              onClick={handleNext}
-              disabled={currentQuestionIndex === exam.questions.length - 1}
-            >
-              Next
-            </Button>
+            {currentQuestionIndex === exam.questions.length - 1 ? (
+              <Button
+                onClick={() => {
+                  toast({
+                    title: "Exam Submitted",
+                    description: "Your answers have been recorded."
+                  });
+                  navigate('/results');
+                }}
+                variant="default"
+              >
+                Submit Exam
+              </Button>
+            ) : (
+              <Button onClick={handleNext}>
+                Next
+              </Button>
+            )}
           </div>
         </CardContent>
       </Card>

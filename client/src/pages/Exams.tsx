@@ -39,14 +39,69 @@ const dummyExams = [
       },
       {
         id: "q3",
-        text: "Which method adds an element to the end of an array?",
+        text: "What is the purpose of 'use strict' in JavaScript?",
         options: [
-          { id: "a", text: "arr.push()" },
-          { id: "b", text: "arr.pop()" },
-          { id: "c", text: "arr.unshift()" },
-          { id: "d", text: "arr.shift()" }
+          { id: "a", text: "To enable strict type checking" },
+          { id: "b", text: "To prevent common coding mistakes" },
+          { id: "c", text: "To improve performance" },
+          { id: "d", text: "To enable new JavaScript features" }
         ],
-        correctOptionId: "a"
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "Which method removes the last element from an array?",
+        options: [
+          { id: "a", text: "shift()" },
+          { id: "b", text: "unshift()" },
+          { id: "c", text: "pop()" },
+          { id: "d", text: "push()" }
+        ],
+        correctOptionId: "c"
+      },
+      {
+        id: "q5",
+        text: "What is the output of: console.log(2 + '2');",
+        options: [
+          { id: "a", text: "4" },
+          { id: "b", text: "22" },
+          { id: "c", text: "NaN" },
+          { id: "d", text: "Error" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q6",
+        text: "Explain the difference between == and === in JavaScript.",
+        options: [
+          { id: "a", text: "They are the same." },
+          { id: "b", text: "== checks for value equality, === checks for both value and type equality." },
+          { id: "c", text: "== checks for type equality, === checks for value equality." },
+          { id: "d", text: "=== is faster than ==" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q7",
+        text: "What is a closure in JavaScript?",
+        options: [
+          { id: "a", text: "A type of loop" },
+          { id: "b", text: "A function that has access to variables from its surrounding scope, even after that scope has finished executing." },
+          { id: "c", text: "A way to define private variables" },
+          { id: "d", text: "A method for handling errors" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q8",
+        text: "What does the 'this' keyword refer to in JavaScript?",
+        options: [
+          { id: "a", text: "Always refers to the global object" },
+          { id: "b", text: "Depends on how the function is called (context)" },
+          { id: "c", text: "Refers to the current function" },
+          { id: "d", text: "Refers to the calling function" }
+        ],
+        correctOptionId: "b"
       }
     ]
   },
@@ -80,6 +135,61 @@ const dummyExams = [
           { id: "d", text: "component Component() => <div>Hello</div>" }
         ],
         correctOptionId: "a"
+      },
+      {
+        id: "q3",
+        text: "What is JSX?",
+        options: [
+          { id: "a", text: "A JavaScript library" },
+          { id: "b", text: "A syntax extension to JavaScript" },
+          { id: "c", text: "A type of CSS" },
+          { id: "d", text: "A framework for building APIs" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "Explain the concept of props in React.",
+        options: [
+          { id: "a", text: "Internal state of a component" },
+          { id: "b", text: "Data passed from a parent component to a child component" },
+          { id: "c", text: "A type of event handler" },
+          { id: "d", text: "A way to style components" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q5",
+        text: "What is the purpose of the key prop in React lists?",
+        options: [
+          { id: "a", text: "To style list items" },
+          { id: "b", text: "To help React identify and update individual items efficiently" },
+          { id: "c", text: "To store data associated with each item" },
+          { id: "d", text: "It's optional and doesn't affect performance" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q6",
+        text: "What is a virtual DOM?",
+        options: [
+          { id: "a", text: "A real DOM that is faster" },
+          { id: "b", text: "A lightweight representation of the real DOM" },
+          { id: "c", text: "A type of database" },
+          { id: "d", text: "A way to access the server" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q7",
+        text: "Explain the concept of state in React.",
+        options: [
+          { id: "a", text: "Data that is passed from parent to child" },
+          { id: "b", text: "Data that changes over time and causes a component to re-render" },
+          { id: "c", text: "A way to style the components" },
+          { id: "d", text: "A type of event handler" }
+        ],
+        correctOptionId: "b"
       }
     ]
   },
@@ -113,7 +223,63 @@ const dummyExams = [
           { id: "d", text: "bool" }
         ],
         correctOptionId: "c"
+      },
+      {
+        id: "q3",
+        text: "What is the purpose of the `in` keyword in Python?",
+        options: [
+          { id: "a", text: "To define a variable" },
+          { id: "b", text: "To check if a value is present in a sequence (string, list, tuple, etc.)" },
+          { id: "c", text: "To define a function" },
+          { id: "d", text: "To create a loop" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "What is the difference between a list and a tuple in Python?",
+        options: [
+          { id: "a", text: "There is no difference" },
+          { id: "b", text: "Lists are mutable, tuples are immutable" },
+          { id: "c", text: "Lists are immutable, tuples are mutable" },
+          { id: "d", text: "Lists are used for numbers, tuples are used for strings" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q5",
+        text: "How do you define a function in Python?",
+        options: [
+          { id: "a", text: "function myFunction() {}" },
+          { id: "b", text: "def myFunction():" },
+          { id: "c", text: "myFunction() =" },
+          { id: "d", text: "func myFunction() {}" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q6",
+        text: "What is a dictionary in Python?",
+        options: [
+          { id: "a", text: "An ordered sequence of items" },
+          { id: "b", text: "A collection of key-value pairs" },
+          { id: "c", text: "A type of loop" },
+          { id: "d", text: "A way to handle errors" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q7",
+        text: "What is the output of: print(type(5))?",
+        options: [
+          { id: "a", text: "<class 'str'>" },
+          { id: "b", text: "<class 'int'>" },
+          { id: "c", text: "<class 'float'>" },
+          { id: "d", text: "<class 'bool'>" }
+        ],
+        correctOptionId: "b"
       }
+
     ]
   },
   {
@@ -144,6 +310,61 @@ const dummyExams = [
           { id: "b", text: "WHERE" },
           { id: "c", text: "LIMIT" },
           { id: "d", text: "HAVING" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q3",
+        text: "What is the purpose of the `ORDER BY` clause in SQL?",
+        options: [
+          { id: "a", text: "To filter data" },
+          { id: "b", text: "To sort the results" },
+          { id: "c", text: "To group the results" },
+          { id: "d", text: "To limit the number of rows returned" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "What is the difference between `INNER JOIN` and `LEFT JOIN` in SQL?",
+        options: [
+          { id: "a", text: "There is no difference" },
+          { id: "b", text: "INNER JOIN returns only matching rows, LEFT JOIN returns all rows from the left table and matching rows from the right table" },
+          { id: "c", text: "INNER JOIN returns all rows from the right table, LEFT JOIN returns all rows from the left table" },
+          { id: "d", text: "INNER JOIN is faster than LEFT JOIN" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q5",
+        text: "What is a primary key in SQL?",
+        options: [
+          { id: "a", text: "A column that can contain NULL values" },
+          { id: "b", text: "A unique identifier for each row in a table" },
+          { id: "c", text: "A column that stores dates" },
+          { id: "d", text: "A column that stores text" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q6",
+        text: "What SQL command is used to add new data to a table?",
+        options: [
+          { id: "a", text: "UPDATE" },
+          { id: "b", text: "INSERT INTO" },
+          { id: "c", text: "DELETE FROM" },
+          { id: "d", text: "SELECT" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q7",
+        text: "What is a foreign key in SQL?",
+        options: [
+          { id: "a", text: "A key that is used to uniquely identify each row" },
+          { id: "b", text: "A key that refers to a primary key in another table" },
+          { id: "c", text: "A key that is not used for anything" },
+          { id: "d", text: "A key that is used to encrypt data" }
         ],
         correctOptionId: "b"
       }
@@ -179,6 +400,61 @@ const dummyExams = [
           { id: "d", text: "Binary Tree" }
         ],
         correctOptionId: "b"
+      },
+      {
+        id: "q3",
+        text: "Explain the difference between a stack and a queue.",
+        options: [
+          { id: "a", text: "They are the same." },
+          { id: "b", text: "Stacks use LIFO, queues use FIFO (First In First Out)." },
+          { id: "c", text: "Stacks use FIFO, queues use LIFO." },
+          { id: "d", text: "Stacks are used for sorting, queues are used for searching." }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "What is a binary tree?",
+        options: [
+          { id: "a", text: "A type of graph" },
+          { id: "b", text: "A tree where each node has at most two children" },
+          { id: "c", text: "A tree where each node has exactly two children" },
+          { id: "d", text: "A linear data structure" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q5",
+        text: "What is a linked list?",
+        options: [
+          { id: "a", text: "A linear data structure where elements are not stored contiguously" },
+          { id: "b", text: "A type of graph" },
+          { id: "c", text: "A tree-like data structure" },
+          { id: "d", text: "A way to sort data" }
+        ],
+        correctOptionId: "a"
+      },
+      {
+        id: "q6",
+        text: "What is a graph?",
+        options: [
+          { id: "a", text: "A collection of nodes and edges" },
+          { id: "b", text: "A type of tree" },
+          { id: "c", text: "A linear data structure" },
+          { id: "d", text: "A way to represent functions" }
+        ],
+        correctOptionId: "a"
+      },
+      {
+        id: "q7",
+        text: "What is Big O notation used for?",
+        options: [
+          { id: "a", text: "To measure the size of data structures" },
+          { id: "b", text: "To analyze the efficiency of algorithms" },
+          { id: "c", text: "To represent functions" },
+          { id: "d", text: "To encrypt data" }
+        ],
+        correctOptionId: "b"
       }
     ]
   },
@@ -212,6 +488,61 @@ const dummyExams = [
           { id: "d", text: "Paused" }
         ],
         correctOptionId: "d"
+      },
+      {
+        id: "q3",
+        text: "Explain how `async/await` works in JavaScript.",
+        options: [
+          { id: "a", text: "It's a way to create synchronous code" },
+          { id: "b", text: "It's a way to write asynchronous code in a more synchronous-looking style" },
+          { id: "c", text: "It's used for error handling" },
+          { id: "d", text: "It's used for creating timers" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q4",
+        text: "What is prototypal inheritance in JavaScript?",
+        options: [
+          { id: "a", text: "A way to create classes" },
+          { id: "b", text: "A mechanism where objects inherit properties and methods from other objects" },
+          { id: "c", text: "A way to handle events" },
+          { id: "d", text: "A type of data structure" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q5",
+        text: "Explain the concept of hoisting in JavaScript.",
+        options: [
+          { id: "a", text: "Moving elements in an array" },
+          { id: "b", text: "Moving variables and function declarations to the top of their scope" },
+          { id: "c", text: "A way to create closures" },
+          { id: "d", text: "A type of error handling" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q6",
+        text: "What is the difference between `let`, `const`, and `var` in JavaScript?",
+        options: [
+          { id: "a", text: "They are all the same" },
+          { id: "b", text: "`var` is function-scoped, `let` and `const` are block-scoped; `const` creates immutable variables." },
+          { id: "c", text: "`let` is function-scoped, `const` and `var` are block-scoped" },
+          { id: "d", text: "`const` is function-scoped, `let` and `var` are block-scoped" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q7",
+        text: "What is a Promise in JavaScript?",
+        options: [
+          { id: "a", text: "A type of array" },
+          { id: "b", text: "An object representing the eventual completion (or failure) of an asynchronous operation" },
+          { id: "c", text: "A way to handle errors" },
+          { id: "d", text: "A type of loop" }
+        ],
+        correctOptionId: "b"
       }
     ]
   }
@@ -230,34 +561,34 @@ const Exams = () => {
   const navigate = (path: string) => {
     setLocation(path);
   };
-  
+
   const handleFilterChange = (key: string, value: string) => {
     setFilters({
       ...filters,
       [key]: value
     });
   };
-  
+
   // Navigate to exam screen when an exam is selected
   const handleExamClick = (examId: number) => {
     navigate(`/exam/${examId}`);
   };
-  
+
   // Apply filters to exams
   const filteredExams = dummyExams.filter(exam => {
     if (filters.language && filters.language !== "all" && exam.language !== filters.language) return false;
     if (filters.level && filters.level !== "all" && exam.level !== filters.level) return false;
-    
+
     // Filter by duration range
     if (filters.duration && filters.duration !== "all") {
       if (filters.duration === "short" && exam.timeLimit > 10) return false;
       if (filters.duration === "medium" && (exam.timeLimit <= 10 || exam.timeLimit > 20)) return false;
       if (filters.duration === "long" && exam.timeLimit <= 20) return false;
     }
-    
+
     return true;
   });
-  
+
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">
@@ -265,7 +596,7 @@ const Exams = () => {
           <h2 className="text-2xl font-medium text-gray-800 mb-2">Available Programming Exams</h2>
           <p className="text-gray-600">Choose an exam to test your programming and IT knowledge</p>
         </div>
-        
+
         {/* Filters */}
         <Card className="mb-8">
           <CardContent className="p-6">
@@ -332,7 +663,7 @@ const Exams = () => {
             </div>
           </CardContent>
         </Card>
-        
+
         {/* Exam Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {filteredExams.length > 0 ? (
