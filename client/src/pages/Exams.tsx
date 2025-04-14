@@ -637,7 +637,8 @@ const Exams = () => {
             filteredExams.map((exam, index) => (
               <div 
                 key={exam.id}
-                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300"
+                onClick={() => handleExamClick(exam.id)}
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 cursor-pointer"
               >
                 <div className="bg-gray-50 p-4 border-b border-gray-200">
                   <h3 className="text-lg font-medium text-gray-800 mb-2">{exam.title}</h3>
@@ -668,15 +669,9 @@ const Exams = () => {
                       {exam.questions.length} questions
                     </div>
                   </div>
-                  <button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition-colors"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleExamClick(exam.id);
-                    }}
-                  >
+                  <div className="w-full text-center bg-blue-600 text-white py-2">
                     Start Exam
-                  </button>
+                  </div>
                 </div>
               </div>
             ))
