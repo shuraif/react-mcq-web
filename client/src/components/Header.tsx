@@ -36,7 +36,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
             <GraduationCap className="mr-2" />
-            <h1 className="text-xl font-medium">LinguaExam</h1>
+            <h1 className="text-xl font-medium">CodeQuiz</h1>
           </div>
           
           <div className="flex items-center">

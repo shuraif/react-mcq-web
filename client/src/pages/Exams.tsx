@@ -8,153 +8,175 @@ import { useLocation } from "wouter";
 const dummyExams = [
   {
     id: 1,
-    title: "Spanish Basics",
-    language: "Spanish",
+    title: "JavaScript Fundamentals",
+    language: "JavaScript",
     level: "Beginner",
-    description: "Learn fundamental Spanish vocabulary and simple phrases.",
+    description: "Test your knowledge of JavaScript basics including variables, functions, and control flow.",
     timeLimit: 15,
-    imageUrl: "https://images.unsplash.com/photo-1592495639839-4eae9bb1d35a",
+    imageUrl: "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
     questions: [
       {
         id: "q1",
-        text: "What is 'water' in Spanish?",
+        text: "Which of the following is a correct way to declare a variable in JavaScript?",
         options: [
-          { id: "a", text: "Pan" },
-          { id: "b", text: "Agua" },
-          { id: "c", text: "Vino" },
-          { id: "d", text: "Leche" }
+          { id: "a", text: "variable x = 5;" },
+          { id: "b", text: "let x = 5;" },
+          { id: "c", text: "int x = 5;" },
+          { id: "d", text: "x := 5;" }
         ],
         correctOptionId: "b"
       },
       {
         id: "q2",
-        text: "How do you say 'hello' in Spanish?",
+        text: "What will be the output of: console.log(typeof []);",
         options: [
-          { id: "a", text: "Hola" },
-          { id: "b", text: "Adiós" },
-          { id: "c", text: "Gracias" },
-          { id: "d", text: "Por favor" }
+          { id: "a", text: "array" },
+          { id: "b", text: "object" },
+          { id: "c", text: "undefined" },
+          { id: "d", text: "null" }
         ],
-        correctOptionId: "a"
+        correctOptionId: "b"
       },
       {
         id: "q3",
-        text: "What is 'dog' in Spanish?",
+        text: "Which method adds an element to the end of an array?",
         options: [
-          { id: "a", text: "Gato" },
-          { id: "b", text: "Perro" },
-          { id: "c", text: "Pájaro" },
-          { id: "d", text: "Pez" }
+          { id: "a", text: "arr.push()" },
+          { id: "b", text: "arr.pop()" },
+          { id: "c", text: "arr.unshift()" },
+          { id: "d", text: "arr.shift()" }
         ],
-        correctOptionId: "b"
+        correctOptionId: "a"
       }
     ]
   },
   {
     id: 2,
-    title: "French: Common Phrases",
-    language: "French",
-    level: "Beginner",
-    description: "Learn essential French phrases for travelers and everyday situations.",
-    timeLimit: 10,
-    imageUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+    title: "React Basics",
+    language: "JavaScript",
+    level: "Intermediate",
+    description: "Test your understanding of fundamental React concepts and hooks.",
+    timeLimit: 20,
+    imageUrl: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2",
     questions: [
       {
         id: "q1",
-        text: "How do you say 'Hello' in French?",
+        text: "Which hook is used to perform side effects in a function component?",
         options: [
-          { id: "a", text: "Bonjour" },
-          { id: "b", text: "Merci" },
-          { id: "c", text: "Au revoir" },
-          { id: "d", text: "S'il vous plaît" }
+          { id: "a", text: "useState" },
+          { id: "b", text: "useEffect" },
+          { id: "c", text: "useContext" },
+          { id: "d", text: "useReducer" }
         ],
-        correctOptionId: "a"
+        correctOptionId: "b"
       },
       {
         id: "q2",
-        text: "What is the French phrase for 'How are you?'",
+        text: "What is the correct syntax for a basic functional component in React?",
         options: [
-          { id: "a", text: "Je m'appelle" },
-          { id: "b", text: "Comment allez-vous?" },
-          { id: "c", text: "Je ne sais pas" },
-          { id: "d", text: "Où est...?" }
+          { id: "a", text: "function Component() { return <div>Hello</div>; }" },
+          { id: "b", text: "class Component { render() { return <div>Hello</div>; } }" },
+          { id: "c", text: "const Component = function() { render(<div>Hello</div>); }" },
+          { id: "d", text: "component Component() => <div>Hello</div>" }
+        ],
+        correctOptionId: "a"
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Python Basics",
+    language: "Python",
+    level: "Beginner",
+    description: "Master the fundamentals of Python programming language.",
+    timeLimit: 15,
+    imageUrl: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0",
+    questions: [
+      {
+        id: "q1",
+        text: "How do you create a comment in Python?",
+        options: [
+          { id: "a", text: "// This is a comment" },
+          { id: "b", text: "/* This is a comment */" },
+          { id: "c", text: "# This is a comment" },
+          { id: "d", text: "<!-- This is a comment -->" }
+        ],
+        correctOptionId: "c"
+      },
+      {
+        id: "q2",
+        text: "Which of these is not a Python data type?",
+        options: [
+          { id: "a", text: "int" },
+          { id: "b", text: "float" },
+          { id: "c", text: "char" },
+          { id: "d", text: "bool" }
+        ],
+        correctOptionId: "c"
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "SQL Basics",
+    language: "SQL",
+    level: "Beginner",
+    description: "Learn fundamental SQL queries and database concepts.",
+    timeLimit: 15,
+    imageUrl: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d",
+    questions: [
+      {
+        id: "q1",
+        text: "Which SQL command is used to retrieve data from a database?",
+        options: [
+          { id: "a", text: "GET" },
+          { id: "b", text: "OPEN" },
+          { id: "c", text: "SELECT" },
+          { id: "d", text: "EXTRACT" }
+        ],
+        correctOptionId: "c"
+      },
+      {
+        id: "q2",
+        text: "Which SQL clause is used to filter records?",
+        options: [
+          { id: "a", text: "FILTER" },
+          { id: "b", text: "WHERE" },
+          { id: "c", text: "LIMIT" },
+          { id: "d", text: "HAVING" }
         ],
         correctOptionId: "b"
       }
     ]
   },
   {
-    id: 3,
-    title: "German: Grammar Basics",
-    language: "German",
-    level: "Beginner",
-    description: "Master the fundamentals of German grammar with this comprehensive test.",
-    timeLimit: 20,
-    imageUrl: "https://images.unsplash.com/photo-1527866959252-deab85ef7d1b",
+    id: 5,
+    title: "Data Structures",
+    language: "Computer Science",
+    level: "Intermediate",
+    description: "Test your understanding of common data structures and their operations.",
+    timeLimit: 25,
+    imageUrl: "https://images.unsplash.com/photo-1496065187959-7f07b8353c55",
     questions: [
       {
         id: "q1",
-        text: "What is the correct definite article for 'book' in German?",
+        text: "What is the time complexity of searching an element in a hash table in the average case?",
         options: [
-          { id: "a", text: "der" },
-          { id: "b", text: "die" },
-          { id: "c", text: "das" },
-          { id: "d", text: "dem" }
+          { id: "a", text: "O(1)" },
+          { id: "b", text: "O(log n)" },
+          { id: "c", text: "O(n)" },
+          { id: "d", text: "O(n²)" }
         ],
-        correctOptionId: "c"
+        correctOptionId: "a"
       },
       {
         id: "q2",
-        text: "Which form of 'to be' is correct for 'I am' in German?",
+        text: "Which data structure follows the Last In First Out (LIFO) principle?",
         options: [
-          { id: "a", text: "bin" },
-          { id: "b", text: "ist" },
-          { id: "c", text: "sind" },
-          { id: "d", text: "seid" }
-        ],
-        correctOptionId: "a"
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Italian for Travelers",
-    language: "Italian",
-    level: "Beginner",
-    description: "Learn practical Italian phrases for your next trip to Italy.",
-    timeLimit: 15,
-    imageUrl: "https://images.unsplash.com/photo-1529155197886-f268835c8a17",
-    questions: [
-      {
-        id: "q1",
-        text: "How do you say 'please' in Italian?",
-        options: [
-          { id: "a", text: "Grazie" },
-          { id: "b", text: "Prego" },
-          { id: "c", text: "Per favore" },
-          { id: "d", text: "Ciao" }
-        ],
-        correctOptionId: "c"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Portuguese Vocabulary",
-    language: "Portuguese",
-    level: "Intermediate",
-    description: "Expand your Portuguese vocabulary with this comprehensive test.",
-    timeLimit: 25,
-    imageUrl: "https://images.unsplash.com/photo-1518730518541-d0843268c287",
-    questions: [
-      {
-        id: "q1",
-        text: "What does 'saudade' mean?",
-        options: [
-          { id: "a", text: "Happiness" },
-          { id: "b", text: "A deep longing for something or someone" },
-          { id: "c", text: "Beautiful" },
-          { id: "d", text: "Welcome" }
+          { id: "a", text: "Queue" },
+          { id: "b", text: "Stack" },
+          { id: "c", text: "Linked List" },
+          { id: "d", text: "Binary Tree" }
         ],
         correctOptionId: "b"
       }
@@ -162,21 +184,32 @@ const dummyExams = [
   },
   {
     id: 6,
-    title: "Advanced Spanish Grammar",
-    language: "Spanish",
+    title: "Advanced JavaScript",
+    language: "JavaScript",
     level: "Advanced",
-    description: "Challenge your Spanish grammar skills with complex structures and tenses.",
+    description: "Challenge yourself with advanced JavaScript concepts like closures, prototypes, and async programming.",
     timeLimit: 30,
-    imageUrl: "https://images.unsplash.com/photo-1551277949-f9f32c4059b6",
+    imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     questions: [
       {
         id: "q1",
-        text: "Which tense is used in: 'Si hubiera estudiado, habría aprobado el examen'?",
+        text: "What will be the output of: (function(x) { return (function(y) { console.log(x); })(2); })(1);",
         options: [
-          { id: "a", text: "Pretérito perfecto" },
-          { id: "b", text: "Presente de subjuntivo" },
-          { id: "c", text: "Condicional perfecto" },
-          { id: "d", text: "Pluscuamperfecto de subjuntivo" }
+          { id: "a", text: "1" },
+          { id: "b", text: "2" },
+          { id: "c", text: "undefined" },
+          { id: "d", text: "Error" }
+        ],
+        correctOptionId: "a"
+      },
+      {
+        id: "q2",
+        text: "Which of the following is NOT a JavaScript promise state?",
+        options: [
+          { id: "a", text: "Pending" },
+          { id: "b", text: "Fulfilled" },
+          { id: "c", text: "Rejected" },
+          { id: "d", text: "Paused" }
         ],
         correctOptionId: "d"
       }
@@ -225,8 +258,8 @@ const Exams = () => {
     <div className="py-8">
       <div className="container mx-auto px-4">
         <div className="mb-8">
-          <h2 className="text-2xl font-medium text-gray-800 mb-2">Available Exams</h2>
-          <p className="text-gray-600">Choose an exam to test your language skills</p>
+          <h2 className="text-2xl font-medium text-gray-800 mb-2">Available Programming Exams</h2>
+          <p className="text-gray-600">Choose an exam to test your programming and IT knowledge</p>
         </div>
         
         {/* Filters */}
@@ -241,11 +274,10 @@ const Exams = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Languages</SelectItem>
-                    <SelectItem value="Spanish">Spanish</SelectItem>
-                    <SelectItem value="French">French</SelectItem>
-                    <SelectItem value="German">German</SelectItem>
-                    <SelectItem value="Italian">Italian</SelectItem>
-                    <SelectItem value="Portuguese">Portuguese</SelectItem>
+                    <SelectItem value="JavaScript">JavaScript</SelectItem>
+                    <SelectItem value="Python">Python</SelectItem>
+                    <SelectItem value="SQL">SQL</SelectItem>
+                    <SelectItem value="Computer Science">Computer Science</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -257,24 +289,25 @@ const Exams = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Levels</SelectItem>
-                    <SelectItem value="Beginner">Beginner (A1-A2)</SelectItem>
-                    <SelectItem value="Intermediate">Intermediate (B1-B2)</SelectItem>
-                    <SelectItem value="Advanced">Advanced (C1-C2)</SelectItem>
+                    <SelectItem value="Beginner">Beginner</SelectItem>
+                    <SelectItem value="Intermediate">Intermediate</SelectItem>
+                    <SelectItem value="Advanced">Advanced</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Skill</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Topic</label>
                 <Select value={filters.skill} onValueChange={(value) => handleFilterChange("skill", value)}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="All Skills" />
+                    <SelectValue placeholder="All Topics" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Skills</SelectItem>
-                    <SelectItem value="vocabulary">Vocabulary</SelectItem>
-                    <SelectItem value="grammar">Grammar</SelectItem>
-                    <SelectItem value="reading">Reading</SelectItem>
-                    <SelectItem value="listening">Listening</SelectItem>
+                    <SelectItem value="all">All Topics</SelectItem>
+                    <SelectItem value="frontend">Frontend</SelectItem>
+                    <SelectItem value="backend">Backend</SelectItem>
+                    <SelectItem value="database">Database</SelectItem>
+                    <SelectItem value="algorithms">Algorithms & Data Structures</SelectItem>
+                    <SelectItem value="devops">DevOps</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

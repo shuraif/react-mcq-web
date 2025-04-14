@@ -8,10 +8,10 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <div className="flex items-center mb-4">
               <GraduationCap className="mr-2" />
-              <h2 className="text-xl font-medium">LinguaExam</h2>
+              <h2 className="text-xl font-medium">CodeQuiz</h2>
             </div>
             <p className="text-gray-400 max-w-md">
-              Helping language learners test and improve their skills through comprehensive exams and personalized feedback.
+              Helping developers and IT professionals test and improve their skills through comprehensive coding exams and technical assessments.
             </p>
           </div>
           
@@ -19,21 +19,21 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-medium mb-3">Languages</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Spanish</a></li>
-                <li><a href="#" className="hover:text-white">French</a></li>
-                <li><a href="#" className="hover:text-white">German</a></li>
-                <li><a href="#" className="hover:text-white">Italian</a></li>
-                <li><a href="#" className="hover:text-white">Portuguese</a></li>
+                <li><a href="#" className="hover:text-white">JavaScript</a></li>
+                <li><a href="#" className="hover:text-white">Python</a></li>
+                <li><a href="#" className="hover:text-white">Java</a></li>
+                <li><a href="#" className="hover:text-white">C#</a></li>
+                <li><a href="#" className="hover:text-white">SQL</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-medium mb-3">Resources</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Learning Tips</a></li>
-                <li><a href="#" className="hover:text-white">Study Guides</a></li>
-                <li><a href="#" className="hover:text-white">Practice Tests</a></li>
-                <li><a href="#" className="hover:text-white">Language Forums</a></li>
+                <li><a href="#" className="hover:text-white">Coding Challenges</a></li>
+                <li><a href="#" className="hover:text-white">Documentation</a></li>
+                <li><a href="#" className="hover:text-white">Practice Projects</a></li>
+                <li><a href="#" className="hover:text-white">Developer Forums</a></li>
               </ul>
             </div>
             
