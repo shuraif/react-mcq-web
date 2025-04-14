@@ -5,36 +5,8 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import ProgressBar from "@/components/ProgressBar";
 
-const dummyExams = [
-  {
-    id: 1,
-    title: "JavaScript Fundamentals",
-    questions: [
-      {
-        id: "q1",
-        text: "Which of the following is a correct way to declare a variable in JavaScript?",
-        options: [
-          { id: "a", text: "variable x = 5;" },
-          { id: "b", text: "let x = 5;" },
-          { id: "c", text: "int x = 5;" },
-          { id: "d", text: "x := 5;" }
-        ],
-        correctOptionId: "b"
-      },
-      {
-        id: "q2",
-        text: "What will be the output of: console.log(typeof []);",
-        options: [
-          { id: "a", text: "array" },
-          { id: "b", text: "object" },
-          { id: "c", text: "undefined" },
-          { id: "d", text: "null" }
-        ],
-        correctOptionId: "b"
-      }
-    ]
-  }
-];
+// Import exam data from Exams.tsx
+import { dummyExams } from "./Exams";
 
 export default function ExamScreen() {
   const [match, params] = useRoute("/exam/:id");
