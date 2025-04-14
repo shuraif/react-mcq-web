@@ -150,11 +150,22 @@ export default function ExamScreen() {
             {currentQuestionIndex === exam.questions.length - 1 ? (
               <Button
                 onClick={() => {
+                  const score = Math.floor(Math.random() * 40) + 60; // Random score between 60-100
+                  const attempt = {
+                    examId: examId,
+                    score,
+                    timeTaken: 900 - timeLeft,
+                    answers: Object.entries(selectedAnswers).map(([questionId, optionId]) => ({
+                      questionId,
+                      selectedOptionId: optionId
+                    }))
+                  };
+                  
                   toast({
                     title: "Exam Submitted",
                     description: "Your answers have been recorded."
                   });
-                  navigate('/results');
+                  setLocation(`/results/${examId}`);
                 }}
                 variant="default"
               >
