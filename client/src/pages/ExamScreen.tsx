@@ -5,47 +5,58 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import ProgressBar from "@/components/ProgressBar";
 
-// Dummy exams data (same as in Exams.tsx)
+// Dummy programming exams data
 const dummyExams = [
   {
     id: 1,
-    title: "Spanish Basics",
-    language: "Spanish",
+    title: "JavaScript Fundamentals",
+    language: "JavaScript",
     level: "Beginner",
-    description: "Learn fundamental Spanish vocabulary and simple phrases.",
+    description: "Test your knowledge of JavaScript basics including variables, functions, and control flow.",
     timeLimit: 15,
-    imageUrl: "https://images.unsplash.com/photo-1592495639839-4eae9bb1d35a",
+    imageUrl: "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
     questions: [
       {
         id: "q1",
-        text: "What is 'water' in Spanish?",
+        text: "Which of the following is a correct way to declare a variable in JavaScript?",
         options: [
-          { id: "a", text: "Pan" },
-          { id: "b", text: "Agua" },
-          { id: "c", text: "Vino" },
-          { id: "d", text: "Leche" }
+          { id: "a", text: "variable x = 5;" },
+          { id: "b", text: "let x = 5;" },
+          { id: "c", text: "int x = 5;" },
+          { id: "d", text: "x := 5;" }
         ],
         correctOptionId: "b"
       },
       {
         id: "q2",
-        text: "How do you say 'hello' in Spanish?",
+        text: "What will be the output of: console.log(typeof []);",
         options: [
-          { id: "a", text: "Hola" },
-          { id: "b", text: "Adiós" },
-          { id: "c", text: "Gracias" },
-          { id: "d", text: "Por favor" }
+          { id: "a", text: "array" },
+          { id: "b", text: "object" },
+          { id: "c", text: "undefined" },
+          { id: "d", text: "null" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q3",
+        text: "Which method adds an element to the end of an array?",
+        options: [
+          { id: "a", text: "arr.push()" },
+          { id: "b", text: "arr.pop()" },
+          { id: "c", text: "arr.unshift()" },
+          { id: "d", text: "arr.shift()" }
         ],
         correctOptionId: "a"
       },
       {
-        id: "q3",
-        text: "What is 'dog' in Spanish?",
+        id: "q4",
+        text: "What is the correct way to write an if statement in JavaScript?",
         options: [
-          { id: "a", text: "Gato" },
-          { id: "b", text: "Perro" },
-          { id: "c", text: "Pájaro" },
-          { id: "d", text: "Pez" }
+          { id: "a", text: "if x = 5 then" },
+          { id: "b", text: "if (x == 5)" },
+          { id: "c", text: "if x == 5" },
+          { id: "d", text: "if x = 5" }
         ],
         correctOptionId: "b"
       }
@@ -53,34 +64,78 @@ const dummyExams = [
   },
   {
     id: 2,
-    title: "French: Common Phrases",
-    language: "French",
-    level: "Beginner",
-    description: "Learn essential French phrases for travelers and everyday situations.",
-    timeLimit: 10,
-    imageUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+    title: "React Basics",
+    language: "JavaScript",
+    level: "Intermediate",
+    description: "Test your understanding of fundamental React concepts and hooks.",
+    timeLimit: 20,
+    imageUrl: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2",
     questions: [
       {
         id: "q1",
-        text: "How do you say 'Hello' in French?",
+        text: "Which hook is used to perform side effects in a function component?",
         options: [
-          { id: "a", text: "Bonjour" },
-          { id: "b", text: "Merci" },
-          { id: "c", text: "Au revoir" },
-          { id: "d", text: "S'il vous plaît" }
+          { id: "a", text: "useState" },
+          { id: "b", text: "useEffect" },
+          { id: "c", text: "useContext" },
+          { id: "d", text: "useReducer" }
+        ],
+        correctOptionId: "b"
+      },
+      {
+        id: "q2",
+        text: "What is the correct syntax for a basic functional component in React?",
+        options: [
+          { id: "a", text: "function Component() { return <div>Hello</div>; }" },
+          { id: "b", text: "class Component { render() { return <div>Hello</div>; } }" },
+          { id: "c", text: "const Component = function() { render(<div>Hello</div>); }" },
+          { id: "d", text: "component Component() => <div>Hello</div>" }
         ],
         correctOptionId: "a"
       },
       {
-        id: "q2",
-        text: "What is the French phrase for 'How are you?'",
+        id: "q3",
+        text: "How do you update state in a React functional component?",
         options: [
-          { id: "a", text: "Je m'appelle" },
-          { id: "b", text: "Comment allez-vous?" },
-          { id: "c", text: "Je ne sais pas" },
-          { id: "d", text: "Où est...?" }
+          { id: "a", text: "this.state.value = newValue" },
+          { id: "b", text: "setValue(newValue)" },
+          { id: "c", text: "state.value = newValue" },
+          { id: "d", text: "setState(newValue)" }
         ],
         correctOptionId: "b"
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Python Basics",
+    language: "Python",
+    level: "Beginner",
+    description: "Master the fundamentals of Python programming language.",
+    timeLimit: 15,
+    imageUrl: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0",
+    questions: [
+      {
+        id: "q1",
+        text: "How do you create a comment in Python?",
+        options: [
+          { id: "a", text: "// This is a comment" },
+          { id: "b", text: "/* This is a comment */" },
+          { id: "c", text: "# This is a comment" },
+          { id: "d", text: "<!-- This is a comment -->" }
+        ],
+        correctOptionId: "c"
+      },
+      {
+        id: "q2",
+        text: "Which of these is not a Python data type?",
+        options: [
+          { id: "a", text: "int" },
+          { id: "b", text: "float" },
+          { id: "c", text: "char" },
+          { id: "d", text: "bool" }
+        ],
+        correctOptionId: "c"
       }
     ]
   }

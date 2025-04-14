@@ -335,8 +335,7 @@ const Exams = () => {
             filteredExams.map((exam, index) => (
               <div 
                 key={exam.id}
-                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 cursor-pointer"
-                onClick={() => handleExamClick(exam.id)}
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300"
               >
                 <div className="bg-gray-50 p-4 border-b border-gray-200">
                   <h3 className="text-lg font-medium text-gray-800 mb-2">{exam.title}</h3>
@@ -351,7 +350,7 @@ const Exams = () => {
                 </div>
                 <div className="p-4">
                   <p className="text-gray-600 text-sm mb-4">{exam.description}</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center text-gray-500 text-sm">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
@@ -367,6 +366,15 @@ const Exams = () => {
                       {exam.questions.length} questions
                     </div>
                   </div>
+                  <button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleExamClick(exam.id);
+                    }}
+                  >
+                    Start Exam
+                  </button>
                 </div>
               </div>
             ))

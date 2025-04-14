@@ -1,22 +1,75 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import TopLeaders from "@/components/TopLeaders";
 import LeaderboardTable from "@/components/LeaderboardTable";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
+// Mock leaderboard data for development
+const mockLeaderboardData = [
+  {
+    user: { id: 1, name: "Jane Smith", email: "jane@example.com" },
+    score: 950,
+    examsCompleted: 12
+  },
+  {
+    user: { id: 2, name: "John Doe", email: "john@example.com" },
+    score: 925,
+    examsCompleted: 10
+  },
+  {
+    user: { id: 3, name: "Alice Johnson", email: "alice@example.com" },
+    score: 890,
+    examsCompleted: 9
+  },
+  {
+    user: { id: 4, name: "Bob Martin", email: "bob@example.com" },
+    score: 820,
+    examsCompleted: 8
+  },
+  {
+    user: { id: 5, name: "Charlie Ross", email: "charlie@example.com" },
+    score: 780,
+    examsCompleted: 7
+  },
+  {
+    user: { id: 6, name: "Diana Chen", email: "diana@example.com" },
+    score: 750,
+    examsCompleted: 6
+  },
+  {
+    user: { id: 7, name: "Evan White", email: "evan@example.com" },
+    score: 720,
+    examsCompleted: 5
+  },
+  {
+    user: { id: 8, name: "Fiona Black", email: "fiona@example.com" },
+    score: 690,
+    examsCompleted: 5
+  },
+  {
+    user: { id: 9, name: "Greg Peterson", email: "greg@example.com" },
+    score: 650,
+    examsCompleted: 4
+  },
+  {
+    user: { id: 10, name: "Hannah Lee", email: "hannah@example.com" },
+    score: 620,
+    examsCompleted: 4
+  }
+];
+
 const Leaderboard = () => {
   const { user } = useAuth();
   const [filters, setFilters] = useState({
     language: "",
     timePeriod: "monthly",
-    region: ""
+    expertise: ""
   });
   
-  const { data: leaderboard, isLoading } = useQuery({
-    queryKey: ["/api/leaderboard"],
-  });
+  // Use mock data for development
+  const leaderboard = mockLeaderboardData;
+  const isLoading = false;
   
   const handleFilterChange = (key: string, value: string) => {
     setFilters({
@@ -39,7 +92,7 @@ const Leaderboard = () => {
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <h2 className="text-2xl font-medium text-gray-800 mb-2">Leaderboard</h2>
-          <p className="text-gray-600">See how you rank against other language learners</p>
+          <p className="text-gray-600">See how you rank against other developers and programmers</p>
         </div>
         
         {/* Filters */}
