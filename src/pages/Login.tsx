@@ -52,7 +52,7 @@ const Login = () => {
       <Card className="w-full max-w-md">
         <CardContent className="pt-8 pb-6 px-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-medium text-primary-dark mb-2">LinguaExam</h1>
+            <h1 className="text-3xl font-medium text-primary-dark mb-2">EasyCodeQuiz</h1>
             <p className="text-gray-600">Master languages through examination</p>
           </div>
           
